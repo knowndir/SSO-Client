@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Page</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <img id="profile-image" alt="Profile Image" style="display: none;" />
+    <p id="profile-bio"></p>
+
+    <script>
+        // Replace these values with your actual OIDC provider details
+        const userInfoEndpoint = 'http://auth-server.com:8000/userinfo/';
+        const accessToken = '697710d218694602a60360e6688d4dc7';
+
+        async function fetchUserInfo() {
+            try {
+                const response = await fetch(userInfoEndpoint, {
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch user info');
+                }
+                else{
+                    console.log(response)
+                }
+
+                const data = await response.json();
+                console.log(data)
+                displayUserInfo(data);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        function displayUserInfo(data) {
+            if (data.profile_image) {
+                const profileImage = document.getElementById('profile-image');
+                profileImage.src = data.profile_image;
+                profileImage.style.display = 'block';
+            }
+
+            if (data.bio) {
+                document.getElementById('profile-bio').textContent = data.bio;
+            }
+        }
+
+        // Fetch and display user info when the page loads
+        document.addEventListener('DOMContentLoaded', fetchUserInfo);
+    </script>
+</body>
+</html>

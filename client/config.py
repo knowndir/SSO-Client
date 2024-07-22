@@ -1,0 +1,7 @@
+OAUTH2_CLIENT_ID = '750128'
+OAUTH2_CLIENT_SECRET = '81e0f43addb7584c60c1a795d7d14c09934f4d79d7acda7a7f7873ff'
+OAUTH2_REDIRECT_URI = 'http://auth-client.com:8081/callback/'
+OAUTH2_AUTHORIZATION_URL = 'http://auth-server.com:8000/authorize/'
+OAUTH2_TOKEN_URL = 'http://auth-server.com:8000/token/'
+OAUTH2_USER_INFO_URL = 'http://auth-server.com:8000/userinfo/'
+CUSTOM_SCOPES = 'openid profile email picture'

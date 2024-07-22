@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center">Profile Information</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <img src="data:image/jpeg;base64,{{ user_info.picture }}" width="200" alt="">
+                        <p><strong>ID:</strong> {{ user_info.sub }}</p>
+                        <p><strong>Bio:</strong> {{ user_info.profile }}</p>
+                        <p><strong>First Name:</strong> {{ user_info.given_name }}</p>
+                        <p><strong>Last Name:</strong> {{ user_info.family_name }}</p>
+                        <p><strong>Email:</strong> {{ user_info.email }}</p>
+                        <p><strong>User Name:</strong> {{ user_info.nickname }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
